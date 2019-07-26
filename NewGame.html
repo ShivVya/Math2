@@ -1,0 +1,58 @@
+<!DOCTYPE HTML>
+<html>
+<head>
+	<title>Multiplication Game</title>
+</head>
+<body>
+	<body style = "background-color:coral;">
+<h1>Math Multiplication Game!</h1>
+<script type="text/javascript">
+
+var add1;
+var add2;
+var cor;
+var points = 0;
+function sum(){
+	add1 = Math.floor(Math.random() * 21);
+	add2 = Math.floor(Math.random() * 11);
+	cor = add1 * add2;
+	document.getElementById('a1').innerHTML = add1;
+	document.getElementById('a2').innerHTML = add2;
+}
+function guessingGame(){
+	
+	var input = parseInt(document.getElementById('guess').value);
+	if (input !== cor){
+		document.getElementById('gameMsg').innerHTML =
+		"WRONG! Try again or click Next";
+	}
+
+	else {
+		document.getElementById('gameMsg').innerHTML =
+		"CORRECT!";
+		points=points +1;
+		document.getElementById('pts').innerHTML = points;
+	}
+}
+
+/*function restart(){
+	var add1 = Math.floor(Math.random() * 21);
+	var add2 = Math.floor(Math.random() * 21);
+	var cor = add1 + add2;
+	document.getElementById('gameMsg').innerHTML = " add1 + add2=";
+}*/
+
+</script>
+<!--<p> add1 + add2 = </p>-->
+
+<input type="text" id="guess">
+<p id="gameMsg">Multiply</p>
+<p id="a1"></p>
+<p id="a2"></p>
+<button type= "button" onclick="sum()">Next</button>
+<button type= "button" onclick="guessingGame()">Submit Answer</button>
+<p id="pts"></p>
+<!--<button type= "button" onclick="restart()">Restart</button>-->
+
+</body>
+</html> 

@@ -1,0 +1,51 @@
+<!DOCTYPE HTML>
+<html>
+<head>
+	<title>Subtraction Game</title>
+</head>
+<body>
+	<body style="background-color:powderblue;">
+<h1>Math Subtraction Game!</h1>
+<script type="text/javascript">
+
+var add1;
+var add2;
+var cor;
+var points = 0;
+function sum(){
+	add1 = Math.floor(Math.random() * 21);
+	add2 = Math.floor(Math.random() * 20);
+	cor = add1 - add2;
+	document.getElementById('a1').innerHTML = add1;
+	document.getElementById('a2').innerHTML = add2;
+}
+function guessingGame(){
+	
+	var input = parseInt(document.getElementById('guess').value);
+	if (input !== cor){
+		document.getElementById('gameMsg').innerHTML =
+		"WRONG :( Try again or click Next";
+	points = points - 1; 
+	}
+
+	else {
+		document.getElementById('gameMsg').innerHTML =
+		"CORRECT!";
+		points=points +1;
+		document.getElementById('pts').innerHTML = points;
+	}
+}
+
+</script>
+
+<input type="text" id="guess">
+<p id="gameMsg">Subtract</p>
+<p id="a1"></p>
+<p id="a2"></p>
+<button type= "button" onclick="sum()">Next</button>
+<button type= "button" onclick="guessingGame()">Submit Answer</button>
+<p id="pts"></p>
+<!--<button type= "button" onclick="restart()">Restart</button>-->
+
+</body>
+</html> 
